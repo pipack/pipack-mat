@@ -47,6 +47,7 @@ default_field_value_pairs = {
     {'YLabel',                 '\alpha - extrapolation parameter'}
     {'PadAxisLabel',           false}
     {'YAxis',                  'tight'}
+    {'XAxis',                  'natural'}
     {'XTicks',                 'auto'}
     {'YTicks',                 'auto'}
     {'FontSize',               12}
