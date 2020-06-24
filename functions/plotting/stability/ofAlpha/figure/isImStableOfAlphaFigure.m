@@ -9,6 +9,6 @@ function [figure_handle, data_raw] = isImStableOfAlphaFigure(inputArg1, alphas, 
 % == Returns ===========================================================================================================
 
 % -- generate data & plot ----------------------------------------------------------------------------------------------
-data_raw      = imIntOfAlphaFigureData(inputArg1, alphas, options);
-figure_handle = imIntOfAlphaFigurePlotter(data_raw, alphas, options);
+data_raw      = isImStableOfAlphaFigureData(inputArg1, alphas, options);
+figure_handle = isImStableOfAlphaFigurePlotter(data_raw, alphas, options);
 end
