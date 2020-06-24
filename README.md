@@ -16,10 +16,10 @@ To initialize a method generator, you must select a node set generator and a ODE
 
 Node set generators inherit from the abstract class *NodeSetGenerator*, and are located in *classes/generators/nodes/families.* Several currently available families of nodes are:
 
-- IEquiNSG: imaginary equispaced nodes ![formula](https://render.githubusercontent.com/render/math?math=$z_j=-i+2ij/q$) <!-- z_j = -i + 2ij/q -->
-- IChebNSG: imaginary chebyshev nodes ![formula](https://render.githubusercontent.com/render/math?math=$z_j=i\cos(\pi(j-1)/(q-1))$)  <!-- z_j = i \cos(\pi(j-1)/(q-1)) -->
-- EquiNSG:  equispaced nodes $z_j = i \cos(\pi(j-1)/(q-1))$
-- ChebNSG:  chebyshev nodes $z_j = -i + 2ij/q$
+- IEquiNSG: imaginary equispaced nodes <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?z_j=-i+2ij/q"> <!-- z_j = -i + 2ij/q -->
+- IChebNSG: imaginary chebyshev nodes <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?z_j=i\cos(\pi(j-1)/(q-1))"> <!-- z_j = i \cos(\pi(j-1)/(q-1)) -->
+- EquiNSG:  equispaced nodes <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?z_j=\cos(\pi(j-1)/(q-1))"> <!-- z_j = \cos(\pi(j-1)/(q-1))$ -->
+- ChebNSG:  chebyshev nodes <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?z_j=-i+2ij/q">  <!-- z_j = -i + 2ij/q -->
 
 All Node sets are initilized with the following way:
 ```
@@ -66,8 +66,8 @@ For Adams ODE polynomials the generators can be initialized using
 Adams_PG(Ly_IBSet, LF_IBSet, EP_generator, type)
 ```
 where the parameter are:
-1. Ly_IBSet: string with value 'PMFO', 'PMFOmj', 'SMFO', 'SMFOmj', or 'SMVO'. Describes AII and AOI set for polynomial $L_y(\tau)$
-2. LF_IBSet: string with value 'PMFO', 'PMFOmj', 'SMFO', 'SMFOmj', or 'SMVO'. Describes AII and AOI set for polynomial $L_F(\tau)$
+1. Ly_IBSet: string with value 'PMFO', 'PMFOmj', 'SMFO', 'SMFOmj', or 'SMVO'. Describes AII and AOI set for polynomial <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?L_y(\tau)"> <!-- $L_y(\tau)$ -->
+2. LF_IBSet: string with value 'PMFO', 'PMFOmj', 'SMFO', 'SMFOmj', or 'SMVO'. Describes AII and AOI set for polynomial <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?L_F(\tau)"> <!-- $L_F(\tau)$ -->
 3. type: string with value 'explicit' or 'diagonally_implicit'
 
 ### Polynomial Method Generators
@@ -112,16 +112,16 @@ where the parameters are:
 2. format: string with value 'full' or 'compact' or 'full_traditional' or 'compact_traditional':
 
     - if 'full' matrices scale with r and
-        $y^[n+1] = Ay^[n] + r * Bf^[n] + Cy^[n+1] + r * Df^[n+1]$
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + r Bf^{[n]} + Cy^{[n+1]} + r Df^{[n+1]}">
 
     - if 'compact' matrices scale with r and
-        $y^[n+1] = Ay^[n] + r * Bf^[n] + r * Cf^[n+1]$
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + r Bf^{[n]} + r Cf^{[n+1]}">
 
     - if 'full_traditional', then matrices scale with h and
-        $y^[n+1] = Ay^[n] + h * Bf^[n] + Cy^[n+1] + h * Df^[n+1]$
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + h Bf^{[n]} + Cy^{[n+1]} + h * Df^{[n+1]}">
 
     - if 'compact_traditional', then matrices scale with h and
-        $y^[n+1] = Ay^[n] + h * Bf^[n] + h * Df^[n+1]$
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + h Bf^{[n]} + h Df^{[n+1]}">
 
 **Note.** If the method is initialized with a NodeSetGenerator with precision='double', then coefficients will be doubles. Similarly, 
 NodeSetGenerator with precision='vpa', then coefficients will be variable precision symbolic, and finally if precision='sym' then coefficients will be symbolic. To obtain exact coefficients, initialize MethodGenerator with precision='sym' then set with sym(alpha).
