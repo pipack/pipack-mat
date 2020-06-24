@@ -112,16 +112,16 @@ where the parameters are:
 2. format: string with value 'full' or 'compact' or 'full_traditional' or 'compact_traditional':
 
     - if 'full' matrices scale with r and
-        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + r Bf^{[n]} + Cy^{[n+1]} + r Df^{[n+1]}">
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]}=Ay^{[n]}+rBf^{[n]}+Cy^{[n+1]}+rDf^{[n+1]}">
 
     - if 'compact' matrices scale with r and
-        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + r Bf^{[n]} + r Cf^{[n+1]}">
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]}=Ay^{[n]}+rBf^{[n]}+rCf^{[n+1]}">
 
     - if 'full_traditional', then matrices scale with h and
-        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + h Bf^{[n]} + Cy^{[n+1]} + h * Df^{[n+1]}">
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]}=Ay^{[n]}+hBf^{[n]}+Cy^{[n+1]}+hDf^{[n+1]}">
 
     - if 'compact_traditional', then matrices scale with h and
-        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]} = Ay^{[n]} + h Bf^{[n]} + h Df^{[n+1]}">
+        <img style="vertical-align:middle" src="https://latex.codecogs.com/gif.latex?y^{[n+1]}=Ay^{[n]}+hBf^{[n]}+hDf^{[n+1]}">
 
 **Note.** If the method is initialized with a NodeSetGenerator with precision='double', then coefficients will be doubles. Similarly, 
 NodeSetGenerator with precision='vpa', then coefficients will be variable precision symbolic, and finally if precision='sym' then coefficients will be symbolic. To obtain exact coefficients, initialize MethodGenerator with precision='sym' then set with sym(alpha).
