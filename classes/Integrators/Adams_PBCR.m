@@ -43,7 +43,7 @@ classdef Adams_PBCR < PBCR
                 layout_options = struct();
             end
             plot_options = setDefaultOptions(plot_options, {{'DrawIntegrationPaths', true}});
-            this.expansionPointDiagram@PBCR(plot_options, layout_options);
+            [figure_handle, aspect_ratio] = this.expansionPointDiagram@PBCR(plot_options, layout_options);
         end
         
         function [figure_handle_Ly, aspect_ratio_Ly, figure_handle_LF, aspect_ratio_LF] = polynomialDiagram(this, plot_options, layout_options)
