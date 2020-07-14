@@ -1,12 +1,18 @@
-function [BLKGenerator, MG] = BG_iCheb_BAM_SMFCmj_SW(node_precision)
+function [BLKGenerator, MG] = BG_iCheb_BAM_SMFCmj_SW(node_precision, node_ordering)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
 if(nargin < 1)
     node_precision = 'double';
 end
+if(nargin < 2)
+    node_ordering = 'inwards';
+end
 
-node_ordering  = 'inwards';
+if(~any(strcmp(node_ordering, {'inwards', 'outwards'})))
+    node_ordering  = 'inwards';
+    warning('Invalid node ordering; must be "inwards" or "outwards". Code will use inwards')
+end
 
 % -- select method --------------------------------------------------------------------------------
 MG = PBMGenerator(struct( ...
